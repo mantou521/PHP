@@ -1,4 +1,6 @@
 <?php
+namespace Strategy;
+
 //现金收费抽象类
 abstract class Cashsuper
 {
