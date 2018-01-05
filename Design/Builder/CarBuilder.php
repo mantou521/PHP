@@ -19,7 +19,7 @@ class CarBuilder implements BuilderInterface
 
     public function addDoors()
     {
-        $this->car->setPart('rightDoor', new Parts\Doors);
+        $this->car->setPart('rightDoor', new Parts\Door());
         $this->car->setPart('leftdoor', new Parts\Door());
         $this->car->setPart('trunkLid', new Parts\Door());
     }

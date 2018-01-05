@@ -7,6 +7,8 @@
  */
 namespace Design\Builder\Tests;
 
+include_once '././././vendor/autoload.php';
+
 use Design\Builder\Director;
 use Design\Builder\Parts\Car;
 use Design\Builder\Parts\Truck;
