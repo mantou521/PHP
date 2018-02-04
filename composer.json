@@ -12,6 +12,7 @@
     "autoload": {
         "psr-4": {
             "Design\\": "Design/"
+            "Math\\": "Math/"
         }
     }
 }
