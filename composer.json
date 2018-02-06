@@ -3,7 +3,10 @@
     "description": "...",
     "require": {
         "php": ">=7.0",
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "phpoffice/phpspreadsheet": "^1.1",
+        "tomk79/php-excel2html": "^0.0.7",
+        "apfelbox/php-file-download": "^2.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
