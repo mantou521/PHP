@@ -24,7 +24,7 @@ abstract class Decorator extends Component
     {
         if($this->component != null)
         {
-            $this->component->Opetation();
+            $this->component->operation();
         }
     }
 }
