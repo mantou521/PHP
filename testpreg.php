@@ -9,6 +9,6 @@
 $pattern = "/%[^a-zA-Z]+%/";
 $str = "hello %999%world!";
 
-$rst = preg_match($pattern, $str);
-var_dump($rst);
+preg_match($pattern, $str, $arr);
+var_dump($arr);
 

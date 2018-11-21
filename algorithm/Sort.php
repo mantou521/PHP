@@ -20,6 +20,7 @@ class Sort
 
     /**
      * 冒泡
+     * 平均和最坏情况下的时间复杂度都是 O(n^2)，最好情况下都是 O(n)，空间复杂度是 O(1)
      *
      * @param $arr
      */
@@ -33,6 +34,30 @@ class Sort
             }
 
         }
+    }
+
+    public function quickSort($array)
+    {
+        if (count($array) <= 1)
+            return $array;
+        $mid = $array[0];
+        $leftArray = [];
+        $rightArray = [];
+
+        foreach ($array as $value) {
+            if ($value < $mid)
+                $leftArray[] = $value;
+            if ($value > $mid)
+                $rightArray[] = $value;
+        }
+
+        $leftArray = $this->quickSort($leftArray);
+        $leftArray[] = $mid;
+
+        $rightArray = $this->quickSort($rightArray);
+
+        return array_merge($leftArray, $rightArray);
+
     }
 
     /**
@@ -89,6 +114,22 @@ class Sort
 
 $Sort = new Sort();
 
+#----------------------快排
+$arr = array_rand(range(1, 3000), 1500);
+shuffle($arr);
+
+$t1 = microtime(true);
+$result = $Sort->quickSort($arr);
+$t2 = microtime(true);
+echo ($t2 - $t1) * 1000 . "ms\n";
+
+$t1 = microtime(true);
+$Sort->bubble_sort($arr);
+$t2 = microtime(true);
+echo ($t2 - $t1) * 1000 . "ms\n";
+
+die;
+
 #...............交换
 echo "交换\n";
 
@@ -123,3 +164,5 @@ echo "二分查找\n";
 $arr = array(2, 3, 4, 32);
 $result = $Sort->binarySearch($arr, 0, 3, 3);
 var_dump($result);
+
+

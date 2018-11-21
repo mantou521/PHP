@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * 反向引用
+ */
+$str = '<b>abc</b>';
+$pattern = '/<b>(.*)<\/b>/';
+echo preg_replace($pattern, '\\1 ', $str);
+die;
+
+
+/**
  * 数组替换模式
  */
 $string = "The quick brown fox jumped over the lazy dog";
