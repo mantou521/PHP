@@ -1,6 +1,6 @@
 <?php
 
-namespace mantou521\algorithm;
+namespace Algorithm;
 
 class Sort
 {

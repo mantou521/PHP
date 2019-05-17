@@ -14,9 +14,12 @@
     },
     "autoload": {
         "psr-4": {
+            "Algorithm\\": "Algorithm/",
             "Design\\": "Design/",
             "Math\\": "Math/",
-            "File\\": "File/"
+            "File\\": "File/",
+            "Interview\\": "Interview-questions/"
         }
     }
+
 }
