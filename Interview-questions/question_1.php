@@ -4,7 +4,7 @@ namespace Interview;
 
 use Algorithm\Sort;
 
-require_once( '../vendor/autoload.php' );
+require __DIR__.'/../vendor/autoload.php';
 
 class Question_1
 {
@@ -36,13 +36,12 @@ class Question_1
         $this->getLengths($this->points_id);
 
         $Sort = new Sort();
-        $Sort->bubble_sort($this->points);
+        $Sort->bubble_sort($this->lengths);
+        $a = $this->lengths[0];
+        $b = $this->lengths[1];
+        $c = $this->lengths[2];
 
-        $a = $this->points[0];
-        $b = $this->points[1];
-        $c = $this->points[2];
-
-        if (pow($c, 2) == pow($a, 2) + pow($b, 2)) {
+        if ($c == $a + $b) {
             return true;
         }
 
@@ -63,7 +62,7 @@ class Question_1
 
 
     /**
-     * 获取两点之间的距离
+     * 获取两点之间的距离的平方数
      *
      * @param $point_1 [0,0]
      * @param $point_2 [1,1]
@@ -71,7 +70,7 @@ class Question_1
      */
     public function getTwoPointsLength($point_1, $point_2) :float
     {
-        $length = sqrt(pow((abs($point_2[1] - $point_1[1])), 2) + pow(abs($point_2[0] - $point_1[0]), 2));
+        $length = pow((abs($point_2[1] - $point_1[1])), 2) + pow(abs($point_2[0] - $point_1[0]), 2);
 
         return $length;
     }
